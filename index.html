@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pig Latin Converter</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+	<h1>Pig Latin Converter</h1>
+	<form>
+		Language to convert to:
+		<br/>
+		Pig Latin <input type="radio" name="conversion_type" value="piglatin" checked/>
+		English <input type="radio" name="conversion_type" value="english" />
+		<br/>
+		<input id="keypressInput" type="text" placeholder="Type message to translate">
+	 	<br/>
+	 	<button type='button' id="clickMe">SUBMIT</button>
+ 	</form>
+
+ 	<h4>Your translation is:</h4>
+ 	<div id="response"></div>
+
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
