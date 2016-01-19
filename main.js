@@ -15,7 +15,13 @@ button.addEventListener("click", function(e) {
 	    }
 	}
 	//response.innerHTML = langDirection + ' ' + words;
-            toPigLatin(words);
+            if(langDirection === 'piglatin'){
+                toPigLatin(words);    
+            }else{
+                //console.log('why you want english?')
+                toEnglish(words);
+            }
+            
 });
 
 
@@ -25,7 +31,6 @@ var checkFirst = function(first){
       }else{
         return false
       }
-
 }
 
 var toPigLatin =function(word){
@@ -37,7 +42,7 @@ var toPigLatin =function(word){
         var wordLength = word.length
         var back = word.split("");
         
-        console.log(back)
+        //console.log(back)
         var front = [];
         for (var i =0; i<wordLength; i++   ){
             if(back[0] == "a" || back[0] == "e" || back[0] == "i" || back[0] == "o" || back[0] == "u" ) {
@@ -53,6 +58,20 @@ var toPigLatin =function(word){
     }
 }
 
+var toEnglish = function(word){
+    //console.log(word);
+    var pieces = word.split("-");
+    //console.log(pieces);
+    if(words[1] === 'yay'){
+        response.innerHTML = words[0];
+    }else{
+        var afterDash = pieces[1].split("");
+        //console.log(afterDash);
+        afterDash.pop();
+        afterDash.pop();
+        response.innerHTML = afterDash+pieces[0];
+    }
+}
 //toPigLatin('hello');
 //toPigLatin('cat');
 //toPigLatin('fshi');
